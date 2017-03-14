@@ -4,7 +4,6 @@ import model.User;
 import org.apache.commons.io.FileUtils;
 import xml.XMLFactory;
 
-import javax.xml.crypto.Data;
 import java.io.File;
 import java.io.IOException;
 
@@ -13,7 +12,7 @@ public class DataService {
     private File file;
 
     public DataService() {
-        this.file = new File("C:\\Users\\RENT\\Desktop\\projekt\\MyProject\\src\\main\\resources\\data.dat");
+        this.file = new File("C:\\Users\\RENT\\Desktop\\projekt\\SDA-logowanie\\src\\main\\resources\\data.dat");
     }
 
     public void saveData(String xmlString) {

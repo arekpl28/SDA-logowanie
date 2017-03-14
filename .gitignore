@@ -1,8 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea/
 out/
-SDA-Json.iml
 target/
-*/iml
-MyProject.iml
+*iml
+
 

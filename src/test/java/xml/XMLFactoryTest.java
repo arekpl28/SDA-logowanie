@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 
+
 public class XMLFactoryTest {
 
     private String login;
@@ -44,7 +45,10 @@ public class XMLFactoryTest {
         Assert.assertTrue(user.equals(xmlUser));
     }
 
+
     public String getXmlUserResult() {
         return xmlUserResult;
     }
+
+
 }

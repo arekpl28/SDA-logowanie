@@ -12,7 +12,7 @@ public class DataService {
     private File file;
 
     public DataService() {
-        this.file = new File("C:\\Users\\RENT\\Desktop\\projekt\\SDA-logowanie\\src\\main\\resources\\data.dat");
+        this.file = new File("C:\\Users\\Arek\\Desktop\\Java\\SDA-logowanie\\src\\main\\resources\\data.dat");
     }
 
     public void saveData(String xmlString) {

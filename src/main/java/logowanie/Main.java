@@ -12,7 +12,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         login(scanner);
 //        DataService dataService = new DataService();
-//        User user = new User("Adam", "Kowal");
+//        User user = new User("arek", "arek123");
 //        XMLFactory<User> xmlFactory = new XMLFactory<User>(User.class);
 //        String xmlUser = xmlFactory.objectToXML(user);
 //        dataService.saveData(xmlUser);

@@ -1,18 +1,22 @@
 package service;
 
+import model.Company;
+import model.StreetPrefix;
 import model.User;
 import org.apache.commons.io.FileUtils;
 import xml.XMLFactory;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DataService {
 
     private File file;
 
     public DataService() {
-        this.file = new File("C:\\Users\\Arek\\Desktop\\Java\\SDA-logowanie\\src\\main\\resources\\data.dat");
+        this.file = new File("C:\\Users\\RENT\\Desktop\\projekt\\SDA-logowanie\\src\\main\\resources\\data.dat");
     }
 
     public void saveData(String xmlString) {
@@ -36,5 +40,14 @@ public class DataService {
             e.printStackTrace();
         }
         return user;
+    }
+
+    public List<String> printCompanyInfo(Company company) {
+        List<String> result = new ArrayList<>();
+        result.add(company.getName());
+        result.add(company.getAdress().toString());
+        result.add(company.getNip());
+        return result;
+
     }
 }

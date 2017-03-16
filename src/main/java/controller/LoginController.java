@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
 import model.User;
 import service.UserService;
 
-public class LoginController {
+public class LoginController extends  Controller{
 
     @FXML
     private Button submit;
@@ -34,9 +34,7 @@ public class LoginController {
                 alert.show();
                 flag = false;
             } else {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION, "Bledne dane");
-                alert.show();
-                flag = false;
+                showErrorAlert("Sorry wrong data");
             }
         }
     }

@@ -3,7 +3,6 @@ package model;
 public class Adress {
     public enum StreetPrefix {
         STREET("ul."), AVENUE("al."), SQUERE("pl.");
-
         private final String prefix;
 
         StreetPrefix(String prefix) {
@@ -13,7 +12,6 @@ public class Adress {
         public String getPrefix() {
             return prefix;
         }
-
     }
 
     private String streetName;

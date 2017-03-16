@@ -1,4 +1,5 @@
 package model;
+
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -38,9 +39,7 @@ public class User {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         User user = (User) o;
-
         if (login != null ? !login.equals(user.login) : user.login != null) return false;
         return password != null ? password.equals(user.password) : user.password == null;
     }

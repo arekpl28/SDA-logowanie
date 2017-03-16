@@ -3,17 +3,26 @@ package controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import model.Adress;
 import model.Company;
+import pdf.PdfFactory;
+import service.DataService;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
-public class CompanyCreateControler {
+public class CompanyCreateControler extends Controller {
 
     @FXML
     private TextField streetField;
+
+    @FXML
+    private Button dodajButton;
+
+    @FXML
+    private Button makePDFButton;
 
     @FXML
     private RadioButton avenueButton;
@@ -66,7 +75,12 @@ public class CompanyCreateControler {
     }
 
     @FXML
-    void addCompanyCreateControler(ActionEvent event) {
+    Company addCompanyCreateControler() {
+        return bindToModelCompany();
+    }
+
+    private Company bindToModelCompany() {
+        DataService dataService = new DataService();
         Company company = new Company();
         company.setName(comapanyField.getText());
         Adress adress = new Adress();
@@ -78,16 +92,38 @@ public class CompanyCreateControler {
         adress.setCity(cityField.getText());
         company.setAdress(adress);
         company.setNip(nipfield.getText());
-        System.out.println(company);
+        dataService.printOutCompanyInfo(company);
+        return company;
     }
 
     @FXML
-    void groupButton() {
+    void initialize() {
         ToggleGroup group = new ToggleGroup();
         streetButton.setToggleGroup(group);
         avenueButton.setToggleGroup(group);
         squareButton.setToggleGroup(group);
+    }
 
+    private void validatePostalCode() {
+        Pattern zipPatern = Pattern.compile("(^\\d{2}-\\d{3}$)");
+        Matcher zipMatcher = zipPatern.matcher(zipCodeField.getText());
+        if (zipMatcher.find()) {
+            String zip = zipMatcher.group(1);
+            showConfirmation("Ewerything alright");
+        } else {
+            showErrorAlert("Soory! Wrong postal code.");
+        }
+    }
+
+    @FXML
+    void makePdfOnAction(ActionEvent event) {
+        PdfFactory pdfFactory = new PdfFactory();
+        pdfFactory.pdfFromCompany(addCompanyCreateControler());
+    }
+
+    @FXML
+    void ValidateOnAction(ActionEvent event) {
+        validatePostalCode();
     }
 }
 

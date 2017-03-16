@@ -50,6 +50,8 @@
                   <Insets left="50.0" />
                </GridPane.margin></RadioButton>
                 <Button fx:id="dodajButton" mnemonicParsing="false" onAction="#addCompanyCreateControler" text="Dodaj" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
+            <Button fx:id="makePDFButton" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#makePdfOnAction" text="Pdf" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
+            <Button fx:id="validateButon" mnemonicParsing="false" onAction="#ValidateOnAction" text="Validate Form" GridPane.columnIndex="1" GridPane.rowIndex="8" />
             </children>
         </GridPane>
     </children>

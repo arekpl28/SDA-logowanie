@@ -1,6 +1,20 @@
 package model;
 
 public class Adress {
+    public enum StreetPrefix {
+        STREET("ul."), AVENUE("al."), SQUERE("pl.");
+
+        private final String prefix;
+
+        StreetPrefix(String prefix) {
+            this.prefix = prefix;
+        }
+
+        public String getPrefix() {
+            return prefix;
+        }
+
+    }
 
     private String streetName;
     private String houseNumber;

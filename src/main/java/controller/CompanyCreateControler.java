@@ -8,7 +8,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import model.Adress;
 import model.Company;
-import model.StreetPrefix;
 
 
 public class CompanyCreateControler {
@@ -39,25 +38,29 @@ public class CompanyCreateControler {
 
     @FXML
     private TextField localNumberField;
+    private Adress.StreetPrefix streetPrefix;
 
     @FXML
     private RadioButton squareButton;
-    private StreetPrefix streetPrefix;
 
     @FXML
     void choosePrefix(ActionEvent event) {
-        if (event.getSource() instanceof RadioButton){
-            RadioButton carenPrefixRdaioButton = (RadioButton) event.getSource();
-            String buttonName = carenPrefixRdaioButton.getText();
+        if (event.getSource() instanceof RadioButton) {
+            RadioButton curentPrefixRadioButton = (RadioButton) event.getSource();
+            String buttonName = curentPrefixRadioButton.getText();
 
-            switch (buttonName){
+            switch (buttonName) {
                 case "Ulica":
-                    streetPrefix = StreetPrefix.STREET;
+                    streetPrefix = Adress.StreetPrefix.STREET;
                     break;
                 case "Aleja":
-                    streetPrefix = StreetPrefix.AVENUE;
+                    streetPrefix = Adress.StreetPrefix.AVENUE;
+                    break;
                 case "Plac":
-                    streetPrefix = StreetPrefix.SQUERE;
+                    streetPrefix = Adress.StreetPrefix.SQUERE;
+                    break;
+                default:
+                    break;
             }
         }
     }
@@ -75,11 +78,11 @@ public class CompanyCreateControler {
         adress.setCity(cityField.getText());
         company.setAdress(adress);
         company.setNip(nipfield.getText());
-        System.out.println(company.toString());
+        System.out.println(company);
     }
 
     @FXML
-    void initializer(){
+    void groupButton() {
         ToggleGroup group = new ToggleGroup();
         streetButton.setToggleGroup(group);
         avenueButton.setToggleGroup(group);

@@ -1,7 +1,6 @@
 package service;
 
 import model.User;
-import xml.XMLFactory;
 
 public class UserService {
 

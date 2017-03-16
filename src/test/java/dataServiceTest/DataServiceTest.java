@@ -2,7 +2,6 @@ package dataServiceTest;
 
 import model.Adress;
 import model.Company;
-import model.StreetPrefix;
 import model.User;
 import org.junit.Assert;
 import org.junit.Before;
@@ -26,7 +25,8 @@ public class DataServiceTest {
     public void setUp() {
         company = new Company();
         company.setName("Biedronka");
-        Adress adress = new Adress(StreetPrefix.STREET, "Cwiartki", "3", "4", "60-666", "Poznań", "Poland");
+        Adress adress = new Adress(Adress.StreetPrefix.STREET, "Cwiartki", "3", "4", "60-666",
+                "Poznań", "Poland");
         company.setAdress(adress);
         company.setNip("342435353");
         dataService = new DataService();

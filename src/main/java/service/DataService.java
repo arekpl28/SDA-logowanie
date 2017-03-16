@@ -1,7 +1,6 @@
 package service;
 
 import model.Company;
-import model.StreetPrefix;
 import model.User;
 import org.apache.commons.io.FileUtils;
 import xml.XMLFactory;

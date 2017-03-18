@@ -6,7 +6,6 @@ import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 
 
 public class Main extends Application {
@@ -18,7 +17,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 //        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/LoginView.fxml"));
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/CompanyCreateView.fxml"));
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/Product.fxml"));
         StackPane stackPane = loader.load();
         Scene scene = new Scene(stackPane);
 

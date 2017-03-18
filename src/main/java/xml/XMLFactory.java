@@ -15,7 +15,7 @@ public class XMLFactory<T> {
     private Class<T> type;
 
     public XMLFactory(Class<T> type) {
-        this.type=type;
+        this.type = type;
     }
 
     public T xmlToObject(String xml) {
